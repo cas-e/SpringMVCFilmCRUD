@@ -1,5 +1,10 @@
 package com.skilldistillery.film.dao;
 
+import java.util.List;
+
+import com.skilldistillery.film.entities.Actor;
+import com.skilldistillery.film.entities.Film;
+
 public class FilmDaoJdbcImpl implements FilmDAO {
 	
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
@@ -16,5 +21,61 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		   throw new RuntimeException("Unable to load MySQL Driver class");
 		  }
 		 }
+
+
+	@Override
+	public Film findFilmById(int filmId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Film> findFilmBySearchTerm(String searchTerm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Actor createActor(Actor actor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean saveActor(Actor actor) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean deleteActor(Actor actor) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public Film createFilm(Film film) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public boolean deleteFilm(Film film) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean updateFilm(Film film) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 		
 }
