@@ -11,19 +11,33 @@
 <body>
 
 	<h1>Film Details</h1>
-	<p> You can change any details you want here </p>
+	<span>Title: </span>
+	${filmId.title}
+	<br>
+	<span>Description: </span>
+	${filmId.description}
+	<br>
+	<span>Release Year: </span>
+	${filmId.releaseYear}
+	<br>
+	<span>Rental Duration: </span>
+	${filmId.rentalDuration}
+	<br>
+	<span>Rental Rate: </span>
+	${filmId.rentalRate}
+	<br>
+	<span>Film Length: </span>
+	${filmId.length}
+	<br>
+	<span>Replacement Cost: </span>
+	${filmId.replacementCost}
+	<br>
+	<br>
+	<a href="index.html">Back to Home</a>
 	
-	<!-- TODO: more of this for other fields -->
-	<form action="changeFilm.do" method="get">
-		<span>Title: </span>
-		<input type="text" name="filmTitle" value="${filmId.title }">
-		
-		<br>
-		<br>
-		<button>Send updates</button>
-	</form>
 	
-	<h2>${filmId}</h2>
+	
+	
 	
 	
 </body>
