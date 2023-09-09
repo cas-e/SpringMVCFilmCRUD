@@ -40,11 +40,11 @@
 		<br>
 		<button>Send updates</button>
 		
+
+	</form>
+	
 	<br>
 	<br>
 	<a href="index.html">Back to Home</a>
-	</form>
-	
-	
 </body>
 </html>
