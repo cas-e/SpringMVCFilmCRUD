@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>MVC Film Site</title>
+	<meta charset="UTF-8">
+	<title>MVC Film Site</title>
 </head>
+
 <body>
-	
+
 	<h1>Spring MVC Film Site</h1>
-	
+
+	<h2>Find Film By Id</h2>
 	<form action="getFilm.do" method="get">
 		<input type="number" name="filmId">
 		<button>Show Film</button>
 	</form>
 
+
+	<h2>Add New Film</h2>
+	<form action="addFilm.do" method="get">
+
+		<span>Title: </span>
+		<input type="text" name="filmTitle">
+
+		<br>
+		
+<!-- need buttons for the following 
++----+----------+
+| id | name     |
++----+----------+
+|  1 | English  |
+|  2 | Italian  |
+|  3 | Japanese |
+|  4 | Mandarin |
+|  5 | French   |
+|  6 | German   |
++----+----------+ 
+-->
+		<p>Language of the film: </p>
+		<input type="radio" name="filmLangId" value="English" id="eng">
+		<label for="eng">English</label>
+		
+		<input type="radio" name="filmLangId" value="Italian" id="italian">
+		<label for="italian">Italian</label>
+		
+	</form>
+
+
 </body>
+
 </html>
