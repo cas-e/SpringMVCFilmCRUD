@@ -14,9 +14,7 @@ import com.skilldistillery.film.entities.Film;
 
 
 public class FilmDaoJdbcImpl implements FilmDAO {
-
 	
-
 		private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
 		private static final String USERNAME = "student";
 		private static final String PASSWORD = "student";
@@ -289,6 +287,12 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			  return true;
 			}
 		
+		
+		/*
+		 * This method currently throws an error if someone tries to add a film
+		 * whose title is the same as one already in the database. 
+		 * Might want to fix that as a TODO item. 
+		 */
 		
 		public Film createFilm(Film film) {
 			  Connection conn = null;
