@@ -11,9 +11,8 @@
 <body>
 
 	
-	<h1>Successfully Added Film</h1>
+	<h1>Successfully Deleted Film with ID = ${filmId}</h1>
 
-	<h2>Title: ${film.title}</h2>
-	<h2>Id: ${film.id}</h2>
+	
 </body>
 </html>

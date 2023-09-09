@@ -59,18 +59,38 @@ public class FilmController {
 	public ModelAndView createFilm(String filmTitle) {
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/film.jsp");
+		mv.setViewName("WEB-INF/createFilm.jsp");
 
 		Film film = new Film();
 		String notFound = "Sorry, the film with the ID: " + filmTitle + " does not exist in our records.";
 
 		film.setTitle(filmTitle);
 		film.setLanguageId(1);
+		
+		
 		filmDao.createFilm(film);
 
 		mv.addObject("film", film);
-
+		
+		System.out.println("I RAN");
 		return mv;
 	}
 
+	@RequestMapping(path = "deleteFilm.do", params = "filmId", method = RequestMethod.GET)
+	public ModelAndView deleteFilm(int filmId) {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/deleteFilm.jsp");
+
+		Film film = new Film();
+		
+
+		film.setId(filmId);
+		
+		filmDao.deleteFilm(film);
+		
+		mv.addObject("filmId", filmId);
+
+		return mv;
+	}
 }
