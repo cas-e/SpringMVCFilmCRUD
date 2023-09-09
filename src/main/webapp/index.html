@@ -18,33 +18,12 @@
 
 
 	<h2>Add New Film</h2>
-		<button>Add Film</button>
-	<form action="createFilm.do" method="get">
+		
+	<a href="createFilmForm.do"><button>Add Film</button></a>
+	
 
-		<span>Title: </span>
-		<input type="text" name="filmTitle">
-		<br>
-
-		<!-- need buttons for the following 
-+----+----------+
-| id | name     |
-+----+----------+
-|  1 | English  |
-|  2 | Italian  |
-|  3 | Japanese |
-|  4 | Mandarin |
-|  5 | French   |
-|  6 | German   |
-+----+----------+ 
--->
-		<p>Language of the film: </p>
-		<input type="radio" name="filmLangId" value="English" id="eng">
-		<label for="eng">English</label>
-
-		<input type="radio" name="filmLangId" value="Italian" id="italian">
-		<label for="italian">Italian</label>
-
-	</form>
+	<h2>Edit Film by Id</h2>
+	<a href="editFilmForm.do"><button>Edit Film</button></a>
 
 	<h2>Delete Film By Id</h2>
 	<form action="deleteFilm.do" method="get">

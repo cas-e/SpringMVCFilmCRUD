@@ -11,7 +11,7 @@
 <body>
 
 	
-	<h1>Form for Adding Film</h1>
+	<h1>Form for Editing Film</h1>
 
 	
 	<form action="changeFilm.do" method="get">
@@ -39,11 +39,11 @@
 		<br>
 		<br>
 		<button>Send updates</button>
-	</form>
-	
+		
 	<br>
 	<br>
 	<a href="index.html">Back to Home</a>
+	</form>
 	
 	
 </body>

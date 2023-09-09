@@ -76,6 +76,24 @@ public class FilmController {
 		return mv;
 	}
 
+	@RequestMapping(path = "createFilmForm.do")
+	public ModelAndView createFilmForm() {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/createFilm.jsp");
+
+		return mv;
+	}
+	
+	@RequestMapping(path = "editFilmForm.do")
+	public ModelAndView editFilmForm() {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/editFilm.jsp");
+
+		return mv;
+	}
+	
 	@RequestMapping(path = "deleteFilm.do", params = "filmId", method = RequestMethod.GET)
 	public ModelAndView deleteFilm(int filmId) {
 
