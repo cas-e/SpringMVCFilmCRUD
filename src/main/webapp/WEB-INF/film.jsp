@@ -32,6 +32,20 @@
 	<span>Replacement Cost: </span>
 	${filmId.replacementCost}
 	<br>
+	
+	<span>Category: </span>
+	${filmId.category}
+	
+	<p>Actors:</p>
+	<ul>
+		<c:forEach var="a" items="${filmId.actors }">
+			
+			<li>${a.firstName} ${a.lastName}</li>
+			
+		</c:forEach>
+	</ul>
+	
+	<br>
 	<br>
 	<a href="index.html">Back to Home</a>
 	

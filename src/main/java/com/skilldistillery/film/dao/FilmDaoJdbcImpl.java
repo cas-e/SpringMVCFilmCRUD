@@ -139,6 +139,26 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				stmt.close();
 				
 				film.setActors(actors);
+				
+				// now we add the category
+				String sqlCat = "SELECT category.name\n"
+						+ "FROM film \n"
+						+ "JOIN film_category ON film.id = film_category.film_id \n"
+						+ "JOIN category ON film_category.film_id = category.id \n"
+						+ "WHERE film.id = ? ";
+
+				PreparedStatement stmtCat = conn.prepareStatement(sqlCat);
+				
+				stmtCat.setInt(1, film.getId());
+				
+				ResultSet category = stmtCat.executeQuery();
+				
+				if (category.next()) {
+					film.setCategory(category.getString("name"));
+				}
+				
+				category.close();
+				stmtCat.close();
 
 			} catch (SQLException e) {
 				System.out.println(e);

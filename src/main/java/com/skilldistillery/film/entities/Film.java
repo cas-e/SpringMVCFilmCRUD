@@ -21,7 +21,17 @@ public class Film {
 	
 	private List<Actor> actors;
 	
+	private String category;
+
 	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public String getReadableLanguage() {
 		return readableLanguage;
 	}
