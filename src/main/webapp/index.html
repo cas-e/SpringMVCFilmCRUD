@@ -18,14 +18,14 @@
 
 
 	<h2>Add New Film</h2>
-	<form action="addFilm.do" method="get">
+	<form action="createFilm.do" method="get">
 
 		<span>Title: </span>
 		<input type="text" name="filmTitle">
-
+		<button>Add Film</button>
 		<br>
-		
-<!-- need buttons for the following 
+
+		<!-- need buttons for the following 
 +----+----------+
 | id | name     |
 +----+----------+
@@ -40,10 +40,10 @@
 		<p>Language of the film: </p>
 		<input type="radio" name="filmLangId" value="English" id="eng">
 		<label for="eng">English</label>
-		
+
 		<input type="radio" name="filmLangId" value="Italian" id="italian">
 		<label for="italian">Italian</label>
-		
+
 	</form>
 
 
