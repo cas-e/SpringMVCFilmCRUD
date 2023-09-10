@@ -14,31 +14,30 @@
 	<h1>Form for Adding Film</h1>
 
 	
-	<form action="changeFilm.do" method="get">
+	<form action="createFilm.do" method="get">
 		<span>Title: </span>
-		<input type="text" name="filmTitle" value="${filmId.title}">
+		<input type="text" name="filmTitle">
 		<br>
 		<span>Description: </span>
-		<input type="text" name="filmTitle" value="${filmId.description}">
+		<input type="text" name="filmDesc">
 		<br>
+		
 		<span>Release Year: </span>
-		<input type="text" name="filmTitle" value="${filmId.releaseYear}">
+		<input type="text" name="filmYear">
 		<br>
+		
 		<span>Rental Duration: </span>
-		<input type="text" name="filmTitle" value="${filmId.rentalDuration}">
+		<input type="text" name="rentalDuration" >
 		<br>
-		<span>Rental Rate: </span>
-		<input type="text" name="filmTitle" value="${filmId.rentalRate}">
-		<br>
+		
 		<span>Film Length: </span>
-		<input type="text" name="filmTitle" value="${filmId.length}">
+		<input type="text" name="filmLength">
 		<br>
-		<span>Replacement Cost: </span>
-		<input type="text" name="filmTitle" value="${filmId.replacementCost}">
 		
 		<br>
 		<br>
 		<button>Send updates</button>
+		
 	</form>
 	
 	<br>

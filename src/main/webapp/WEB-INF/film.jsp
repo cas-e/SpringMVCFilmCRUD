@@ -9,8 +9,11 @@
 <title>Film Details</title>
 </head>
 <body>
-
+	
 	<h1>Film Details</h1>
+	
+	
+	
 	<span>Title: </span>
 	${filmId.title}
 	<br>
@@ -44,6 +47,8 @@
 			
 		</c:forEach>
 	</ul>
+	
+	<p>${errorMessage}</p>
 	
 	<br>
 	<br>

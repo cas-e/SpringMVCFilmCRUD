@@ -17,20 +17,7 @@ public class FilmController {
 	@Autowired
 	private FilmDAO filmDao;
 
-	/*
-	 * I could not get this method to work... I don't understand the
-	 * Model.addAtrribute()
-	 */
-//	@RequestMapping(path = "getFilm.do", method=RequestMethod.GET)
-//	public String getFilm(@RequestParam Integer filmId, Model model) {
-//		System.out.println("filmId:" + filmId);
-//		
-//		model.addAttribute("filmId:" + filmId);	
-//		return "WEB-INF/film.jsp";
-//
-	/*
-	 * This method is like the one we used in USstates, it seems to be working.
-	 */
+
 	@RequestMapping(path = "getFilm.do", params = "filmId", method = RequestMethod.GET)
 	public ModelAndView getFilm(String filmId) {
 
@@ -51,30 +38,40 @@ public class FilmController {
 		if (film != null) {
 			mv.addObject("filmId", film);
 		} else {
-			mv.addObject("filmId", notFound);
+			mv.addObject("errorMessage", notFound);
 		}
 
 		return mv;
 	}
 
-	@RequestMapping(path = "createFilm.do", params = "filmTitle", method = RequestMethod.GET)
-	public ModelAndView createFilm(String filmTitle) {
+	@RequestMapping(path = "createFilm.do", method = RequestMethod.GET, 
+			params = {"filmTitle", "filmDesc", "filmYear", "rentalDuration", "filmLength"})
+	public ModelAndView createFilm(String filmTitle,
+			String filmDesc,
+			String filmYear,
+			int rentalDuration,
+			int filmLength) {
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/createFilm.jsp");
+		mv.setViewName("WEB-INF/createSuccess.jsp");
 
 		Film film = new Film();
-		String notFound = "Sorry, the film with the ID: " + filmTitle + " does not exist in our records.";
-
-		film.setTitle(filmTitle);
-		film.setLanguageId(1);
+		film.setLanguageId(1);  // hard code language
 		
+		film.setTitle(filmTitle);
+		
+		film.setDescription(filmDesc);
+		
+		film.setReleaseYear(filmYear);
+		
+		film.setRentalDuration(rentalDuration);
+		
+		film.setLength(filmLength);
+		// okay, all there is to do now is do this for every single field.
+		// it's just typing. I can do it. 
 		
 		filmDao.createFilm(film);
-
-		mv.addObject("film", film);
 		
-		System.out.println("I RAN");
 		return mv;
 	}
 
