@@ -16,25 +16,26 @@
 	
 	<form action="changeFilm.do" method="get">
 		<span>Title: </span>
-		<input type="text" name="filmTitle" value="${filmId.title}">
+		<input type="text" name="filmTitle" value="${filmObj.title}">
 		<br>
+		 
 		<span>Description: </span>
-		<input type="text" name="filmTitle" value="${filmId.description}">
+		<input type="text" name="filmDesc" value="${filmObj.description}">
 		<br>
+		
 		<span>Release Year: </span>
-		<input type="text" name="filmTitle" value="${filmId.releaseYear}">
+		<input type="text" name="filmYear" value="${filmObj.releaseYear}">
 		<br>
-		<span>Rental Duration: </span>
-		<input type="text" name="filmTitle" value="${filmId.rentalDuration}">
-		<br>
-		<span>Rental Rate: </span>
-		<input type="text" name="filmTitle" value="${filmId.rentalRate}">
-		<br>
+		
 		<span>Film Length: </span>
-		<input type="text" name="filmTitle" value="${filmId.length}">
+		<input type="text" name="filmLength" value="${filmObj.length}">
 		<br>
+		
 		<span>Replacement Cost: </span>
-		<input type="text" name="filmTitle" value="${filmId.replacementCost}">
+		<input type="text" name="filmReplacementCost" value="${filmObj.replacementCost}">
+		
+		<!-- we need to save the the object info to make the edit -->
+		<input name="filmId" value="${filmObj.id}" hidden="">
 		
 		<br>
 		<br>

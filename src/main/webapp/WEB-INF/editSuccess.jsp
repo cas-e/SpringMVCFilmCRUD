@@ -11,8 +11,12 @@
 <body>
 
 	
-	<h1>Successfully Deleted Film with ID = ${filmId}</h1>
+	<h1>Film successfully edited!</h1>
+	
 
+	
 	<a href="index.html">Back to Home</a>
+	
+	
 </body>
 </html>

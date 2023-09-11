@@ -80,16 +80,56 @@ public class FilmController {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/createFilm.jsp");
+		
+
 
 		return mv;
 	}
 	
-	@RequestMapping(path = "editFilmForm.do")
-	public ModelAndView editFilmForm() {
+	@RequestMapping(path = "editFilmForm.do", params="filmId")
+	public ModelAndView editFilmForm(int filmId) {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/editFilm.jsp");
 
+		// select film to edit
+		Film film = filmDao.findFilmById(filmId);
+		
+		mv.addObject("filmObj", film);
+		
+		return mv;
+	}
+	
+	// called from editFilmForm page to actually update the film
+	@RequestMapping(path = "changeFilm.do", params={"filmId", "filmTitle", "filmDesc", "filmYear",
+			"filmLength", "filmReplacementCost"})
+	public ModelAndView changeFilm(int filmId, String filmTitle, String filmDesc,
+			String filmYear, int filmLength, int filmReplacementCost) {
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/editSuccess.jsp");
+
+		
+		
+		// okay, now we create a new film object...
+		Film film = new Film();
+		film.setId(filmId);
+		film.setTitle(filmTitle);
+		film.setLanguageId(1); // hard code for now
+		film.setDescription(filmDesc);
+		film.setReleaseYear(filmYear);
+		film.setLength(filmLength);
+		film.setReplacementCost(filmReplacementCost);
+		
+		// do the update
+		
+		boolean updated = filmDao.updateFilm(film);
+		
+		if (!updated) {
+			System.out.println(filmDesc);
+		} else {
+			System.out.println(filmReplacementCost);
+		}
 		return mv;
 	}
 	

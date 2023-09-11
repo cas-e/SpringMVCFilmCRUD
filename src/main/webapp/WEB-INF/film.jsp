@@ -23,12 +23,6 @@
 	<span>Release Year: </span>
 	${filmId.releaseYear}
 	<br>
-	<span>Rental Duration: </span>
-	${filmId.rentalDuration}
-	<br>
-	<span>Rental Rate: </span>
-	${filmId.rentalRate}
-	<br>
 	<span>Film Length: </span>
 	${filmId.length}
 	<br>

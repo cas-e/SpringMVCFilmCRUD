@@ -400,21 +400,30 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			  return true;
 			}
 		
-		// this just needs to change over from actor info into film relevant info
+		
 		public boolean updateFilm(Film film) {
 			  Connection conn = null;
 			  try {
 			    conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 			    conn.setAutoCommit(false); // START TRANSACTION
 			    
-			    String sql = "UPDATE film SET title=?, language_id=? "
+			    String sql = "UPDATE film SET title=?, language_id=?, description=?, "
+			    		   + "release_year=?, length=?, replacement_cost=? "
 			               + " WHERE id=?";
 			    
 			    PreparedStatement stmt = conn.prepareStatement(sql);
 			    
 			    stmt.setString(1, film.getTitle());
 			    stmt.setInt(2, film.getLanguageId());
-			    stmt.setInt(3, film.getId());
+			    stmt.setString(3, film.getDescription());
+			    stmt.setString(4, film.getReleaseYear());
+			    stmt.setInt(5, film.getLength());
+			    stmt.setInt(6, film.getReplacementCost());
+			    
+			    // the film to update, make sure to shift index if anything updates
+			    stmt.setInt(7, film.getId());
+			    
+			   
 			    
 			    int updateCount = stmt.executeUpdate();
 			    
